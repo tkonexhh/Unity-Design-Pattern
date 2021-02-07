@@ -41,6 +41,7 @@ namespace Design.Decorator
         }
     }
 
+//当加入新特性的时候 会带来子类组合众多的情况
     public class Tank_Heavy_A_W : Tank, AutoReload, WaterMove
     {
         public override void Shoot()

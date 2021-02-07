@@ -1,19 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Design.Decorator;
 
-namespace Design.Decorator
+namespace Design.Factory
 {
-    public class Test2 : MonoBehaviour
+    public class Test_Factory : MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()
         {
-            Tank tank = new Tank_Heavy();
-            tank = new Decorator_A(tank);
-            tank = new Decorator_B(tank);
+            Tank tank = new Tank1Factory().CreateTank();
             tank.Shoot();
         }
+
+
     }
 }
