@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Design.AbsFactory
+namespace DesignPattern.AbsFactory
 {
     public class Test : MonoBehaviour
     {
