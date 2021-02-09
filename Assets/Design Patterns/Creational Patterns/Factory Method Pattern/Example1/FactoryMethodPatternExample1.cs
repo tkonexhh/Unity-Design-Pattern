@@ -2,8 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Design.Factory
+namespace DesignPattern.FactoryMethod
 {
+    public class FactoryMethodPatternExample1 : MonoBehaviour
+    {
+        // Start is called before the first frame update
+        void Start()
+        {
+            Tank tank = new Tank1Factory().CreateTank();
+            tank.Shoot();
+        }
+
+
+    }
+
+
     public abstract class Tank
     {
         public abstract void Shoot();

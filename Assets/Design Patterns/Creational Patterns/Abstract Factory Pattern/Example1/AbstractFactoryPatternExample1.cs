@@ -2,8 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DesignPattern.AbsFactory
+namespace DesignPattern.AbstractFactory
 {
+    public class AbstractFactoryPatternExample1 : MonoBehaviour
+    {
+        // Start is called before the first frame update
+        void Start()
+        {
+            ArmyFactory factory = new ArmyFactory_Germany();
+            var tank = factory.CreateTank();
+            tank.Shoot();
+        }
+
+    }
+
+
     public interface ITank
     {
         void Shoot();
@@ -46,7 +59,6 @@ namespace DesignPattern.AbsFactory
         public abstract Gun CreateGun();
     }
 
-
     public class ArmyFactory_Germany : ArmyFactory//德国坦克工厂
     {
         public override Tank CreateTank()
@@ -62,7 +74,6 @@ namespace DesignPattern.AbsFactory
             return gun;
         }
     }
-
 
     public class ArmFactory_JP : ArmyFactory//德国兵工厂
     {

@@ -2,8 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Design.Decorator
+namespace DesignPattern.Decorator
 {
+    public class DecoratorPatternExample1 : MonoBehaviour
+    {
+        // Start is called before the first frame update
+        void Start()
+        {
+            Tank tank = new Tank_Heavy();
+            tank = new Decorator_A(tank);
+            tank = new Decorator_B(tank);
+            tank.Shoot();
+        }
+    }
+
     public interface ITank
     {
         void Shoot();
@@ -41,7 +53,7 @@ namespace Design.Decorator
         }
     }
 
-//当加入新特性的时候 会带来子类组合众多的情况
+    //当加入新特性的时候 会带来子类组合众多的情况
     public class Tank_Heavy_A_W : Tank, AutoReload, WaterMove
     {
         public override void Shoot()
